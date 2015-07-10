@@ -1,0 +1,78 @@
+# VirtualHost example:
+# Almost any Apache directive may go into a VirtualHost container.
+# The first VirtualHost section is used for all requests that do not
+# match a ##ServerName or ##ServerAlias in any <VirtualHost> block.
+#
+##<VirtualHost *:80>
+    ##ServerAdmin webmaster@dummy-host.example.com
+    ##DocumentRoot "L:/wamp/htdocs/dummy-host.example.com"
+    ##ServerName dummy-host.example.com
+    ##ServerAlias www.dummy-host.example.com
+    ##ErrorLog "logs/dummy-host.example.com-error.log"
+    ##CustomLog "logs/dummy-host.example.com-access.log" common
+##</VirtualHost>
+
+##<VirtualHost *:80>
+    ##ServerAdmin webmaster@dummy-host2.example.com
+    ##DocumentRoot "L:/wamp/htdocs/dummy-host2.example.com"
+    ##ServerName dummy-host2.example.com
+    ##ErrorLog "logs/dummy-host2.example.com-error.log"
+    ##CustomLog "logs/dummy-host2.example.com-access.log" common
+##</VirtualHost>
+#<VirtualHost 162.213.195.36:8080>
+#
+#   ServerName taradac.com
+#   ServerAlias www.taradac.com
+#    ServerAdmin info@taradac.com
+#    DocumentRoot /home/lenhardt/web/taradac.com/public_html
+#    ScriptAlias /cgi-bin/ /home/lenhardt/web/taradac.com/cgi-bin/
+#    Alias /vstats/ /home/lenhardt/web/taradac.com/stats/
+#    Alias /error/ /home/lenhardt/web/taradac.com/document_errors/
+#    #SuexecUserGroup lenhardt lenhardt
+#    CustomLog /var/log/httpd/domains/taradac.com.bytes bytes
+#    CustomLog /var/log/httpd/domains/taradac.com.log combined
+#    ErrorLog /var/log/httpd/domains/taradac.com.error.log
+#    <Directory /home/lenhardt/web/taradac.com/public_html>
+#        AllowOverride All
+#        Options +Includes -Indexes +ExecCGI
+#    </Directory>
+#    <Directory /home/lenhardt/web/taradac.com/stats>
+#        AllowOverride All
+#    </Directory>
+#
+#    <IfModule mod_ruid2.c>
+#        RMode config
+#        RUidGid lenhardt lenhardt
+#        RGroups apache
+#    </IfModule>
+#    <IfModule itk.c>
+#        AssignUserID lenhardt lenhardt
+#    </IfModule>
+#
+#    Include /home/lenhardt/conf/web/httpd.taradac.com.conf*
+#
+#</VirtualHost>
+
+
+
+
+#</VirtualHost>
+
+#NameVirtualHost *
+#  <VirtualHost *>
+#    DocumentRoot /home/lenhardt/web/taradac.com/public_html
+#    ServerName taradac.local
+#    Alias www.taradac.local
+#  </VirtualHost>
+#  <VirtualHost *>
+ServerName taradac.com
+	ServerName taradac.local 
+   	DocumentRoot /home/lenhardt/web/taradac.com/public_html/bedrock/web
+    #Alias www.taradac.local
+  <Directory /home/lenhardt/web/taradac.com/public_html/bedrock/web>
+    Order allow,deny
+    Allow from all
+  </Directory>
+#</VirtualHost>
+
+
